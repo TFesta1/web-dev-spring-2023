@@ -30,9 +30,9 @@ export function api(url: string) {
     session.isLoading = true;
     return myFetch.api(url)
         .catch(err => {
-            console.error(err);
+            console.error({err});
             session.messages.push({
-                msg: err.message ?? JSON.stringify(err),
+                msg: err.message  ?? JSON.stringify(err),
                 type: "danger",
             })
         })
